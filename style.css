@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+:root {
+    --primary-color: #1890FF;
+    --html-color: #E65100;
+    --css-color: #039BE5;
+    --sass-color: #CF649A;
+    --figma-color: #000000;
+    --illustrator-color: #FF5722;
+    --javascript-color: #FFD600;
+    --typescript-color: #1976D2;
+    --php-color: #777BB3;
+    --mysql-color: #00796B;
+    --docker-color: #2395EC;
+    --angular-color: #B52E31;
+    --laravel-color: #FF2D20;
+    --gitlab-color: #E53935;
+    --aws-color: #FF9900;
+    --navbar-height: 66px;
+}
+
+/* 共通 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.poppins-font-family {
+    font-family: 'Poppins', sans-serif;
+}
+
+.font-weight-400 {
+    font-weight: 400;
+}
+
+.font-weight-500 {
+    font-weight: 500;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+.font-weight-700 {
+    font-weight: 700;
+}
+
+.font-weight-800 {
+    font-weight: 800;
+}
+
+.font-weight-900 {
+    font-weight: 900;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.vertical-align-top {
+    vertical-align: top;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+/* ナビゲーションバー */
+nav {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 4px rgba(202, 202, 202, 0.25);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    min-height: var(--navbar-height);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav .sp-menu {
+    display: none;
+}
+
+nav a.nav-link {
+    display: block;
+    padding: 12px 0;
+    margin-right: 20px;
+}
+
+nav li a.active {
+    border-bottom: 3px solid var(--primary-color);
+}
+
+nav p {
+    font-size: 18px;
+}
+
+nav p + p {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* セクション */
+section {
+    padding: 50px 0;
+}
+
+section .container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+section .header {
+    position: relative;
+}
+
+section .body {
+    margin-top: 70px;
+}
+
+section .title {
+    font-size: 36px;
+}
+
+section .sub-title {
+    font-size: 16px;
+    letter-spacing: 8px;
+    margin: -10px 0 4px 0;
+    display: block;
+}
+
+section hr {
+    width: 54px;
+    height: 6px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 20px;
+}
+
+/* イントデクション */
+#introduction {
+    margin-top: var(--navbar-height);
+}
+
+.introduction-body.body {
+    position: relative;
+    padding: 34px;
+    margin-top: 120px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(160, 160, 160, 0.25);
+    border-radius: 20px;
+}
+
+.profile {
+    position: absolute;
+    top: -54px;
+    left: 40%;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(160, 160, 160, 0.25);
+    border-radius: 50%;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(160, 160, 160, 6.25);
+}
+
+.introduction-body p {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.introduction-body p + p {
+    font-size: 1rem;
+    letter-spacing: 1.8px;
+    font-weight: 300;
+}
+
+/* スキル */
+#skills {
+    background-color: #F7FBFF;
+}
+
+.skill-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 560px;
+    margin: auto;
+}
+
+.skill-box {
+    padding: 10px 20px;
+    border: 1px solid #cccccc;
+    font-size: 12px;
+    margin: 0 10px 10px 0;
+    box-shadow: 0 4px 20px rgba(160, 160, 160, 0.25);
+    border-radius: 10px;
+    text-align: center;
+    width: 60px;
+}
+
+.skill-box.html {
+    border-color: var(--html-color);
+}
+
+.skill-box.css {
+    border-color: var(--css-color);
+}
+
+.skill-box.sass {
+    border-color: var(--sass-color);
+}
+
+.skill-box.figma {
+    border-color: var(--figma-color);
+}
+
+.skill-box.illustrator {
+    border-color: var(--illustrator-color);
+}
+
+.skill-box.javascript {
+    border-color: var(--javascript-color);
+}
+
+.skill-box.typescript {
+    border-color: var(--typescript-color);
+}
+
+.skill-box.php {
+    border-color: var(--php-color);
+}
+
+.skill-box.mysql {
+    border-color: var(--mysql-color);
+}
+
+.skill-box.docker {
+    border-color: var(--docker-color);
+}
+
+.skill-box.angular {
+    border-color: var(--angular-color);
+}
+
+.skill-box.laravel {
+    border-color: var(--laravel-color);
+}
+
+.skill-box.gitlab {
+    border-color: var(--gitlab-color);
+}
+
+.skill-box.aws {
+    border-color: var(--aws-color);
+}
+
+.skill-box img {
+    width: 46px;
+    height: 46px;
+}
+
+/* プロジェクト */
+#projects {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-card {
+    max-width: 490px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(160, 160, 160, 0.25);
+    border-radius: 20px;
+    padding: 30px 26px;
+    margin-bottom: 20px;
+}
+
+.project-card:nth-child(odd) {
+    margin-right: 20px;
+}
+
+.project-title {
+    font-size: 18px;
+}
+
+.project-image {
+    width: 100%;
+}
+
+.project-skill-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.project-skill-container .skill-box {
+    padding: 6px;
+    font-size: 10px;
+    width: 50px;
+}
+
+.project-skill-container img {
+    width: 20px;
+    height: 20px;
+}
+
+.project-start-date, .project-members {
+    display: flex;
+    font-size: 14px;
+}
+
+.project-start-date {
+    margin-bottom: 4px;
+}
+
+.project-start-date span {
+    margin-left: 4px;
+}
+
+.project-members span {
+    margin-left: 4px;
+}
+
+.project-description {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 14px;
+}
+
+/* お問い合わせ */
+.contact-container {
+    color: #FFFFFF;
+    background-color: var(--primary-color);
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 40px 0;
+}
+
+.contact-title {
+    font-size: 20px;
+}
+
+.contact-info {
+    display: flex;
+    text-align: center;
+    margin-top: 30px;
+    flex-direction: column;
+    padding: 12px 10px;;
+}
+
+.contact-mail, .contact-phone {
+    flex: 1;
+}
+
+.contact-mail {
+    border-top: 1px solid #FFFFFF;
+    padding-top: 10px;
+}
+
+.contact-phone-no {
+    font-size: 34px;
+}
+
+.contact-mail-address {
+    font-size: 26px;
+}
+
+/* footer */
+#footer {
+    background-color: #F4FAFF;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .nav {
+        cursor: pointer;
+    }
+    nav ul {
+        display: none;
+    }
+    nav.sp-nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+    nav .sp-menu {
+        display: block;
+        margin: 20px 0;
+        padding-left: 10px;
+    }
+    nav a.nav-link {
+        margin: 0 10px;
+    }
+    section .container {
+        max-width: 90%;
+    }
+    .introduction-body.body {
+        padding: 25px 12px 12px 12px;
+    }
+    .skill-container {
+        max-width: 360px;
+    }
+    .skill-box {
+        padding: 10px 12px;
+    }
+    .project-card {
+        padding: 12px 10px;
+    }
+    .project-card:nth-child(odd) {
+        margin-right: 0;
+    }
+    .contact-container {
+        padding: 12px 10px
+    }
+    .contact-title {
+        font-size: 1.3rem;
+    }
+    .contact-info {
+        flex-direction: column;
+        margin-top: 16px;
+    }
+    .contact-phone-no {
+        font-size: 2rem;
+    }
+    .contact-mail-address {
+        font-size: 1.3rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    section .container {
+        /*background: green;*/
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    section .container {
+        /*background: blue;*/
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    section .container {
+        /*background: orange;*/
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    section .container {
+        /*background: pink;*/
+        max-width: 1148px;
+    }
+}
