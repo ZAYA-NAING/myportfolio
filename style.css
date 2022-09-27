@@ -15,7 +15,7 @@
     --laravel-color: #FF2D20;
     --gitlab-color: #E53935;
     --aws-color: #FF9900;
-    --navbar-height: 66px;
+    --navbar-height: 69px;
 }
 
 /* 共通 */
@@ -98,6 +98,7 @@ nav {
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 4px 4px rgba(202, 202, 202, 0.25);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     position: fixed;
     width: 100%;
     z-index: 2;
