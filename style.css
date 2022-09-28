@@ -455,7 +455,8 @@ section hr {
         margin-right: 0;
     }
     .contact-container {
-        padding: 12px 10px
+        padding: 12px 10px;
+        color: #FFFFFF;
     }
     .contact-title {
         font-size: 1.3rem;
