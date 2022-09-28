@@ -9,19 +9,25 @@
                 navStop: 50,  // stop before top
                 navStart: 200, // change class before navstart pixel
             }, options),
-            $that = $(this);
+            navLink = $(this),
+            targetOffsetTops = [];
 
-        $that.on('click', clickScroll);
+        navLink.on('click', clickScroll);
 
         if (settings.wrapper) {
+            navLink.each(function (index, navLinkElement) {
+                targetOffsetTops.push($($(navLinkElement).attr('href')).offset().top);
+            });
             $(window).on('scroll', function () {
                 const windowTop = $(window).scrollTop();
-                $that.each(function (index) {
-                    if (windowTop > $($(this).attr('href')).offset().top - settings.navStart) {
-                        $that.removeClass(settings.activeClass)
-                            .eq(index).addClass(settings.activeClass);
-                    }
-                });
+                setTimeout(function() {
+                    $(targetOffsetTops).each(function (index, targetOffsetTops) {
+                        if (windowTop > targetOffsetTops - settings.navStart) {
+                            navLink.removeClass(settings.activeClass)
+                                .eq(index).addClass(settings.activeClass);
+                        }
+                    });
+                }, 250);
             }).trigger('scroll');
         }
 
