@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
 :root {
     --primary-color: #1890FF;
     --html-color: #E65100;
@@ -29,7 +30,7 @@ html {
 }
 
 body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
 }
 
 ul {
@@ -129,9 +130,44 @@ nav p {
     font-size: 18px;
 }
 
-nav p + p {
+nav p+p {
     font-size: 10px;
     letter-spacing: 2px;
+}
+
+.nav-list .language {
+    height: 100%;
+    display: flex;
+}
+
+.nav-list a .lang-btn {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+nav .lang-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+nav .lang-btn button {
+    padding: 10px 15px;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    /* background-color: #FFFFFF; */
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 4px rgba(202, 202, 202, 0.25);
+}
+
+nav .lang-btn button+button {
+    margin-left: 2px;
 }
 
 /* セクション */
@@ -209,7 +245,7 @@ section hr {
     margin-bottom: 6px;
 }
 
-.introduction-body p + p {
+.introduction-body p+p {
     font-size: 1rem;
     letter-spacing: 1.8px;
     font-weight: 300;
@@ -336,6 +372,7 @@ section hr {
     display: flex;
     flex-wrap: wrap;
 }
+
 .project-skill-container .skill-box {
     padding: 6px;
     font-size: 10px;
@@ -347,7 +384,8 @@ section hr {
     height: 20px;
 }
 
-.project-start-date, .project-members {
+.project-start-date,
+.project-members {
     display: flex;
     font-size: 14px;
 }
@@ -389,10 +427,12 @@ section hr {
     text-align: center;
     margin-top: 30px;
     flex-direction: column;
-    padding: 12px 10px;;
+    padding: 12px 10px;
+    ;
 }
 
-.contact-mail, .contact-phone {
+.contact-mail,
+.contact-phone {
     flex: 1;
 }
 
@@ -421,53 +461,68 @@ section hr {
     .nav {
         cursor: pointer;
     }
+
     nav ul {
         display: none;
     }
+
     nav.sp-nav ul {
         display: flex;
         flex-direction: column;
     }
+
     nav .sp-menu {
         display: block;
         margin: 20px 0;
         padding-left: 10px;
     }
+
     nav a.nav-link {
         margin: 0 10px;
     }
+
     section .container {
         max-width: 90%;
     }
+
     .introduction-body.body {
         padding: 25px 12px 12px 12px;
     }
+
     .skill-container {
         max-width: 360px;
     }
+
     .skill-box {
         padding: 10px 12px;
     }
+
     .project-card {
         padding: 12px 10px;
     }
+
     .project-card:nth-child(odd) {
         margin-right: 0;
     }
+
     .contact-container {
         padding: 12px 10px;
         color: #FFFFFF;
     }
+
     .contact-title {
         font-size: 1.3rem;
     }
+
     .contact-info {
         flex-direction: column;
         margin-top: 16px;
     }
+
     .contact-phone-no {
         font-size: 2rem;
     }
+
     .contact-mail-address {
         font-size: 1.3rem;
     }
