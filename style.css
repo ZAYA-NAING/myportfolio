@@ -14,6 +14,8 @@
     --docker-color: #2395EC;
     --angular-color: #B52E31;
     --laravel-color: #FF2D20;
+    --ionic-color: #3880ff;
+    --github-color: #24292f;
     --gitlab-color: #E53935;
     --aws-color: #FF9900;
     --navbar-height: 69px;
@@ -323,8 +325,16 @@ section hr {
     border-color: var(--laravel-color);
 }
 
+.skill-box.ionic {
+    border-color: var(--ionic-color);
+}
+
 .skill-box.gitlab {
     border-color: var(--gitlab-color);
+}
+
+.skill-box.github {
+    border-color: var(--github-color);
 }
 
 .skill-box.aws {

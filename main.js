@@ -12,7 +12,14 @@ $(function () {
 
   $(".lang-btn").click(function (event) {
     // Get event target class list of contain with `en` and set the language variable
-    let language = event.target.classList.contains("en") ? "en" : "jp";
+    let language = "ja";
+    if (event.target.classList.contains("en")) {
+      language = "en";
+    } else if (event.target.classList.contains("my")) {
+      language = "my";
+    } else {
+      language = "ja";
+    }
     // Get all keys (key)
     const keys = Object.keys(languagesInfo.languages);
 
