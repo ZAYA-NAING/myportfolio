@@ -19,6 +19,14 @@
     --gitlab-color: #E53935;
     --aws-color: #FF9900;
     --navbar-height: 69px;
+    --bg-color: #212121;
+    --text-color: #e1e1e1;
+    --text-white-color: #ffffff;
+}
+
+@font-face {
+    font-family: 'Myanmar MUA font';
+    src: url('./assets/fonts/Myanmar_MUA_font.ttf');
 }
 
 /* 共通 */
@@ -29,10 +37,19 @@
 
 html {
     font-size: 14px;
+    
+}
+body.is-dark {
+    background-color: #101010;
+    color: var(--text-color);
 }
 
-body {
+body.default-font {
     font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+}
+
+body.my-font {
+    font-family: 'Myanmar MUA font', 'Poppins', 'Noto Sans JP', sans-serif;
 }
 
 ul {
@@ -42,6 +59,14 @@ ul {
 a {
     text-decoration: none;
     color: #000000;
+}
+
+p {
+    color: #000000;
+}
+
+span {
+    color: #ffffff;
 }
 
 .text-right {
@@ -223,12 +248,20 @@ section hr {
     border-radius: 20px;
 }
 
+.introduction_title {
+    color: var(--text-color);
+}
+
+.introduction_description {
+    color: var(--text-color);
+}
+
 .profile {
     position: absolute;
-    top: -54px;
-    left: 40%;
-    width: 80px;
-    height: 80px;
+    top: -120px;
+    left: 38%;
+    width: 150px;
+    height: 150px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 20px rgba(160, 160, 160, 0.25);
     border-radius: 50%;
@@ -255,7 +288,8 @@ section hr {
 
 /* スキル */
 #skills {
-    background-color: #F7FBFF;
+    background: #F7FBFF;
+    background: linear-gradient(40deg, rgba(196, 53, 53, 0.1) 0%, rgba(24, 144, 255, 0.1) 100%);
 }
 
 .skill-container {
@@ -264,6 +298,11 @@ section hr {
     flex-wrap: wrap;
     max-width: 560px;
     margin: auto;
+    
+}
+
+.skill-container p {
+    color: var(--text-white-color);
 }
 
 .skill-box {
@@ -275,6 +314,7 @@ section hr {
     border-radius: 10px;
     text-align: center;
     width: 60px;
+    
 }
 
 .skill-box.html {
@@ -359,7 +399,7 @@ section hr {
 
 .project-card {
     max-width: 490px;
-    background-color: #FFFFFF;
+    background-color: var(--text-white-color);
     box-shadow: 0 4px 20px rgba(160, 160, 160, 0.25);
     border-radius: 20px;
     padding: 30px 26px;
@@ -421,7 +461,7 @@ section hr {
 
 /* お問い合わせ */
 .contact-container {
-    color: #FFFFFF;
+    color: var(--text-white-color);
     background-color: var(--primary-color);
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
@@ -447,7 +487,7 @@ section hr {
 }
 
 .contact-mail {
-    border-top: 1px solid #FFFFFF;
+    border-top: 1px solid var(--text-white-color);;
     padding-top: 10px;
 }
 

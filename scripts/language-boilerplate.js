@@ -1,4 +1,5 @@
 const languages = {
+  introduction_subHeading: {ja: 'イントロディクション', en: 'introduction', my: 'မိတ်ဆက်ခြင်း'},
   introduction_title: {
     ja: "ゼイヤ ナインと申します。ウェブ開発者として勤めています。",
     en: "My name is ZAYA NAING and I work as a web developer.",
@@ -17,8 +18,10 @@ const languages = {
     my: `front-end အတွက် Angular နှင့် back-end အတွက် Laravel တို့ဖြင့် Javascript၊ Typescript နှင့် PHP ကိုအသုံးပြု၍ SPA ကို တီထွင်ပါသည်။
       ကျွန်ုပ်တွင် front-end နှင့် back-end coding အကောင်အထည်ဖော်မှု၊ Scrum ဖွံ့ဖြိုးတိုးတက်မှု၊ PHP Unit စမ်းသပ်မှု၊ စမ်းသပ်မှုဖန်တီးမှုနှင့် ပြဿနာဖြေရှင်းခြင်းများတွင် အတွေ့အကြုံရှိသည်။
       ကုဒ်ကို အကောင်အထည်ဖော်သည့်အခါတွင် အခြားအဖွဲ့သားများ နားလည်ပြီး ထိန်းသိမ်းရန် လွယ်ကူသော ကုဒ်ကို ရေးရန် အမြဲကြိုးစားပါသည်။
-      အနာဂတ်တွင်၊ ကျွန်ုပ်သည် ဝဘ်ဖွံ့ဖြိုးတိုးတက်မှုနှင့် စမတ်ဖုန်းအက်ပလီကေးရှင်းဖွံ့ဖြိုးတိုးတက်မှုကို စိန်ခေါ်သည့်အကြောင်း ပိုမိုလေ့လာလိုပါသည်။`,
+      အနာဂတ်တွင်၊ ကျွန်ုပ်သည် ဝဘ်ဖွံ့ဖြိုးတိုးတက်မှုနှင့် စမတ်ဖုန်းအက်ပလီကေးရှင်းဖွံ့ဖြိုးတိုးတက်မှုကို စိန်ခေါ်၍ ပိုမိုလေ့လာလိုပါသည်။`,
   },
+  skill_subHeading: {ja: 'スキル', en: 'Skills', my: 'ကျွမ်းကျင်မှု'},
+  project_subHeading: {ja: 'プロジェクト', en: 'Projects', my: 'စီမံကိန်းများ'},
   project_1_title: {
     ja: "01. 基幹業務システム",
     en: "01. Core business system",
@@ -64,7 +67,7 @@ const languages = {
   project_3_title: {
     ja: "03. 社内FAQシステム",
     en: "03. Company's FAQ system",
-    my: "03. ကုမ္ပဏီ၏ FAQ စနစ်",
+    my: "03. ကုမ္ပဏီ၏ FAQ(အမေးများသောမေးခွန်း) စနစ်",
   },
   project_3_description: {
     ja: `EC サイトの商品、注文などに関するお客様の問い合わせを対応するための 社内用FAQシステムです。 設計から開発、フロントエンド、バックエンド、単体テスト、画面上テスト、バグ対応などを担当しています。`,
@@ -84,7 +87,7 @@ const languages = {
   project_4_title: {
     ja: "04. 発注管理システム",
     en: "04. Outstanding Order Management System",
-    my: "04. ထူးချွန်သောအမိန့်စီမံခန့်ခွဲမှုစနစ်",
+    my: "04. မိတ်ဖက်ကုမ္ပဏီ အော်ဒါစီမံခန့်ခွဲမှုစနစ်",
   },
   project_4_description: {
     ja: `自社製造品以外の製品をパートナー企業に発注する受注管理システムです。主にフロントエンド、バックエンド、単体テスト、画面テスト、API連携などを実装します。`,
@@ -121,6 +124,7 @@ const languages = {
     en: "Members: 1 people",
     my: "အဖွဲ့ဝင်များ- ၁ ယောက်",
   },
+  contact_subHeading: {ja: 'お問い合わせ', en: 'Contact', my: 'ဆက်သွယ်ရန်'},
   contact_title: {
     ja: "お電話またはメールでのご相談は下記までお願いいたします。",
     en: "For inquiries by phone or email, please contact us at the details below.",
