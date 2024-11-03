@@ -391,6 +391,14 @@ section hr {
     border-bottom: 1px solid #f5f5f5;
 }
 
+#projects span {
+    color: #1e1e1e;
+}
+
+#projects h6 {
+    color: #1e1e1e;
+}
+
 .project-container {
     display: flex;
     flex-wrap: wrap;
