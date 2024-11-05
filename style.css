@@ -19,9 +19,21 @@
     --gitlab-color: #E53935;
     --aws-color: #FF9900;
     --navbar-height: 69px;
-    --bg-color: #212121;
-    --text-color: #e1e1e1;
-    --text-white-color: #ffffff;
+    --bg-color: #101010;
+    --bg-reverse-color: #f0f0f0;
+    --text-main-color: #e1e1e1;
+    --text-main-reverse-color: #1e1e1e;
+    --text-sub-color: #ffffff;
+    --text-sub-reverse-color: #000000;
+}
+
+body.is-light {
+    --bg-color: #f0f0f0;
+    --bg-reverse-color: #101010;
+    --text-main-color: #1e1e1e;
+    --text-main-reverse-color: #e1e1e1;
+    --text-sub-color: #000000;
+    --text-sub-reverse-color: #ffffff;
 }
 
 @font-face {
@@ -40,8 +52,8 @@ html {
     
 }
 body.is-dark {
-    background-color: #101010;
-    color: var(--text-color);
+    background-color: var(--bg-color);
+    color: var(--text-main-color);
 }
 
 body.default-font {
@@ -62,11 +74,11 @@ a {
 }
 
 p {
-    color: #000000;
+    color: var(--text-sub-color);
 }
 
 span {
-    color: #ffffff;
+    color: var(--text-sub-color);
 }
 
 .text-right {
@@ -119,6 +131,10 @@ span {
 
 .margin-auto {
     margin: auto;
+}
+
+.display-none {
+    display: none;
 }
 
 /* ナビゲーションバー */
@@ -197,6 +213,27 @@ nav .lang-btn button+button {
     margin-left: 2px;
 }
 
+.theme-color {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 100px;
+    margin-right: 20px;
+}
+
+.theme-color button {
+    padding: 10px 15px;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    /* background-color: #FFFFFF; */
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 4px rgba(202, 202, 202, 0.25);
+    margin-left: 20px;
+}
+
 /* セクション */
 section {
     padding: 50px 0;
@@ -226,6 +263,13 @@ section .sub-title {
     display: block;
 }
 
+body.my-font section .sub-title {
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: -10px 0 4px 0;
+    display: block;
+}
+
 section hr {
     width: 54px;
     height: 6px;
@@ -249,11 +293,11 @@ section hr {
 }
 
 .introduction_title {
-    color: var(--text-color);
+    color: var(--text-main-color);
 }
 
 .introduction_description {
-    color: var(--text-color);
+    color: var(--text-main-color);
 }
 
 .profile {
@@ -302,7 +346,7 @@ section hr {
 }
 
 .skill-container p {
-    color: var(--text-white-color);
+    color: var(--text-sub-color);
 }
 
 .skill-box {
@@ -391,12 +435,16 @@ section hr {
     border-bottom: 1px solid #f5f5f5;
 }
 
+#projects span.sub-title {
+    color: var(--text-sub-color);
+}
+
 #projects span {
-    color: #1e1e1e;
+    color: var(--text-main-color);
 }
 
 #projects h6 {
-    color: #1e1e1e;
+    color: var(--text-main-color);
 }
 
 .project-container {
@@ -407,7 +455,7 @@ section hr {
 
 .project-card {
     max-width: 490px;
-    background-color: var(--text-white-color);
+    background-color: var(--bg-color);
     box-shadow: 0 4px 20px rgba(160, 160, 160, 0.25);
     border-radius: 20px;
     padding: 30px 26px;
@@ -452,13 +500,19 @@ section hr {
     margin-bottom: 4px;
 }
 
-.project-start-date span {
+.project-start-date span, .project-members span {
     margin-left: 4px;
+    color: var(--text-main-color)
 }
 
-.project-members span {
-    margin-left: 4px;
+body.is-dark .project-start-date img,  body.is-dark .project-members img {
+    background-color: #ffffff
 }
+
+
+/* .project-members span {
+    margin-left: 4px;
+} */
 
 .project-description {
     font-size: 1rem;
@@ -469,7 +523,7 @@ section hr {
 
 /* お問い合わせ */
 .contact-container {
-    color: var(--text-white-color);
+    color: var(--text-sub-color);
     background-color: var(--primary-color);
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
@@ -495,7 +549,7 @@ section hr {
 }
 
 .contact-mail {
-    border-top: 1px solid var(--text-white-color);;
+    border-top: 1px solid var(--text-sub-color);;
     padding-top: 10px;
 }
 
@@ -509,13 +563,17 @@ section hr {
 
 /* footer */
 #footer {
-    background-color: #F4FAFF;
+    background-color: var(--bg-reverse-color);
     text-align: center;
     padding: 20px 0;
 }
 
+#footer p {
+    color: var(--text-main-reverse-color);
+}
+
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .nav {
         cursor: pointer;
     }
@@ -565,7 +623,6 @@ section hr {
 
     .contact-container {
         padding: 12px 10px;
-        color: #FFFFFF;
     }
 
     .contact-title {

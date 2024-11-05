@@ -12,6 +12,14 @@ $(function () {
   $(".nav-link").click(function () {
     $(".nav").removeClass("sp-nav");
   });
+  $(".theme-color").click(function () {
+    $("body").toggleClass("is-light");
+    if ($(".dark-color").html().includes('DARK')) {
+      $(".dark-color").html(`☼ LIGHT`)
+    } else {
+      $(".dark-color").html(`☾ DARK`)
+    }
+  });
 
   $(".lang-btn").click(function (event) {
     // Get event target class list of contain with `en` and set the language variable
