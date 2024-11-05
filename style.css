@@ -25,6 +25,9 @@
     --text-main-reverse-color: #1e1e1e;
     --text-sub-color: #ffffff;
     --text-sub-reverse-color: #000000;
+    --btn-them-color: 7, 7, 7;
+    --btn-theme-reverse-color: 225, 225, 225;
+    --text-shadow: 90, 90, 90;
 }
 
 body.is-light {
@@ -34,6 +37,9 @@ body.is-light {
     --text-main-reverse-color: #e1e1e1;
     --text-sub-color: #000000;
     --text-sub-reverse-color: #ffffff;
+    --btn-them-color: 225, 225, 225;
+    --btn-theme-reverse-color: 7, 7, 7;
+    --text-shadow: 180, 180, 180;
 }
 
 @font-face {
@@ -49,8 +55,9 @@ body.is-light {
 
 html {
     font-size: 14px;
-    
+
 }
+
 body.is-dark {
     background-color: var(--bg-color);
     color: var(--text-main-color);
@@ -140,7 +147,7 @@ span {
 /* ナビゲーションバー */
 nav {
     background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 4px rgba(202, 202, 202, 0.25);
+    box-shadow: 0 4px 4px rgba(18, 18, 18, 0.25);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     position: fixed;
@@ -163,6 +170,7 @@ nav a.nav-link {
     display: block;
     padding: 12px 0;
     margin-right: 20px;
+    text-shadow: 2px 2px rgba(var(--text-shadow), 0.35);
 }
 
 nav li a.active {
@@ -219,6 +227,7 @@ nav .lang-btn button+button {
     right: 0;
     margin-top: 100px;
     margin-right: 20px;
+    z-index: 100;
 }
 
 .theme-color button {
@@ -227,10 +236,11 @@ nav .lang-btn button+button {
     outline: none;
     box-sizing: border-box;
     /* background-color: #FFFFFF; */
-    border: 1px solid #E0E0E0;
+    border: 1px solid var(--text-main-color);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 4px rgba(202, 202, 202, 0.25);
+    background-color: rgba(var(--btn-theme-reverse-color), 0.8);
+    color: var(--text-sub-reverse-color);
+    box-shadow: 0 4px 4px rgba(var(--btn-theme-reverse-color), 0.25);
     margin-left: 20px;
 }
 
@@ -302,10 +312,10 @@ section hr {
 
 .profile {
     position: absolute;
-    top: -120px;
+    top: -170px;
     left: 38%;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 20px rgba(160, 160, 160, 0.25);
     border-radius: 50%;
@@ -342,7 +352,7 @@ section hr {
     flex-wrap: wrap;
     max-width: 560px;
     margin: auto;
-    
+
 }
 
 .skill-container p {
@@ -358,7 +368,7 @@ section hr {
     border-radius: 10px;
     text-align: center;
     width: 60px;
-    
+
 }
 
 .skill-box.html {
@@ -447,6 +457,10 @@ section hr {
     color: var(--text-main-color);
 }
 
+#projects .project-title a {
+    color: var(--text-sub-color);
+}
+
 .project-container {
     display: flex;
     flex-wrap: wrap;
@@ -500,12 +514,14 @@ section hr {
     margin-bottom: 4px;
 }
 
-.project-start-date span, .project-members span {
+.project-start-date span,
+.project-members span {
     margin-left: 4px;
     color: var(--text-main-color)
 }
 
-body.is-dark .project-start-date img,  body.is-dark .project-members img {
+body.is-dark .project-start-date img,
+body.is-dark .project-members img {
     background-color: #ffffff
 }
 
@@ -549,7 +565,8 @@ body.is-dark .project-start-date img,  body.is-dark .project-members img {
 }
 
 .contact-mail {
-    border-top: 1px solid var(--text-sub-color);;
+    border-top: 1px solid var(--text-sub-color);
+    ;
     padding-top: 10px;
 }
 

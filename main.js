@@ -14,10 +14,10 @@ $(function () {
   });
   $(".theme-color").click(function () {
     $("body").toggleClass("is-light");
-    if ($(".dark-color").html().includes('DARK')) {
-      $(".dark-color").html(`☼ LIGHT`)
-    } else {
+    if ($(".dark-color").html().includes('LIGHT')) {
       $(".dark-color").html(`☾ DARK`)
+    } else {
+      $(".dark-color").html(`☼ LIGHT`)
     }
   });
 
