@@ -1,3 +1,13 @@
 .DS_Store
 .idea
 .vscode
+._.DS_Store
+._icons
+._.gitignore
+._index.html
+._main.js
+._manifest.json
+._serviceWork.js
+._serviceWorker.js
+._style.css
+/scripts/._language-boilerplate.js
