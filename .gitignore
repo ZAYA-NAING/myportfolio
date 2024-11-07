@@ -2,7 +2,9 @@
 .idea
 .vscode
 ._.DS_Store
-._icons
+._Myanmar_MUA_font.ttf
+assets/fonts/._Myanmar_MUA_font.ttf
+assets/._icons
 ._.gitignore
 ._index.html
 ._main.js
@@ -10,4 +12,8 @@
 ._serviceWork.js
 ._serviceWorker.js
 ._style.css
+._style.min.css
+style.css
 /scripts/._language-boilerplate.js
+scripts/._one-page-nav.js
+scripts/jQuery/._jquery.js
