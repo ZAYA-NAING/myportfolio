@@ -1,5 +1,6 @@
 import { languagesInfo } from "./scripts/language-boilerplate.js";
 let deferredPrompt;
+let isMobileSafari = false;
 $(function () {
   AOS.init(),
     $(".nav-link").onePageNav({
@@ -37,42 +38,66 @@ $(function () {
             : $(`.${e}`).html(`${languagesInfo.languages[e][l]}`);
         });
     });
-}),
-  window.addEventListener("load", () => {
-    "serviceWorker" in navigator &&
-      navigator.serviceWorker
-        .register("/serviceWorker.js")
-        .then((e) => {})
-        .catch((e) => {});
-  });
+});
 const installApp = document.querySelector(".install-app"),
   hideInstallApp = document.querySelector(".hide-install-app"),
   installAppBtn = document.querySelector(".install-btn"),
   installAppCancelBtn = document.querySelector(".install-cancel-btn");
-(hideInstallApp.style.display = "flex"),
-  (installApp.style.display = "none"),
-  installAppCancelBtn.addEventListener("click", (e) => {
-    (hideInstallApp.style.display = "flex"),
-      (installApp.style.display = "none");
-  }),
-  hideInstallApp.addEventListener("click", (e) => {
-    (hideInstallApp.style.display = "none"),
-      (installApp.style.display = "flex");
-  }),
-  window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault(),
-      (deferredPrompt = e),
-      (hideInstallApp.style.display = "flex"),
-      (installApp.style.display = "none"),
+const userAgent = window.navigator.userAgent || "";
+isMobileSafari = userAgent.includes("Mobile/") && userAgent.includes("Safari/");
+
+if (isMobileSafari) {
+  hideInstallApp.style.display = "none";
+  installApp.style.display = "none";
+}
+
+window.addEventListener("load", async () => {
+  "serviceWorker" in navigator &&
+    navigator.serviceWorker
+      .register("/serviceWorker.js")
+      .then((e) => {})
+      .catch((e) => {});
+
+  if (!isMobileSafari) {
+    window.addEventListener("beforeinstallprompt", async (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      hideInstallApp.style.display = "flex";
+      installApp.style.display = "none";
       installAppBtn.addEventListener("click", () => {
-        deferredPrompt.prompt(),
-          deferredPrompt.userChoice.then((e) => {
-            "accepted" === e.outcome
-              ? ((installApp.style.display = "none"),
-                (hideInstallApp.style.display = "none"))
-              : ((hideInstallApp.style.display = "none"),
-                (installApp.style.display = "flex")),
-              (deferredPrompt = null);
-          });
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((e) => {
+          if ("accepted" === e.outcome) {
+            installApp.style.display = "none";
+            hideInstallApp.style.display = "none";
+          } else {
+            hideInstallApp.style.display = "none";
+            installApp.style.display = "flex";
+          }
+          deferredPrompt = null;
+        });
       });
-  });
+    });
+  }
+});
+
+installAppCancelBtn.addEventListener("click", (e) => {
+  hideInstallApp.style.display = "flex";
+  installApp.style.display = "none";
+});
+
+// Show/hide install app on click
+hideInstallApp.addEventListener("click", (e) => {
+  hideInstallApp.style.display = "none";
+  installApp.style.display = "flex";
+});
+
+
+window.addEventListener('appinstalled', () => {
+  // Hide the app-provided install promotion
+  hideInstallPromotion();
+  // Clear the deferredPrompt so it can be garbage collected
+  deferredPrompt = null;
+  // Optionally, send analytics event to indicate successful install
+  console.log('PWA was installed');
+});

@@ -9,6 +9,7 @@ assets/._icons
 ._index.html
 ._main.js
 ._manifest.json
+._manifest.webmanifest
 ._serviceWorker.js
 ._style.css
 ._style.min.css
@@ -16,4 +17,5 @@ style.css
 ._styles
 /scripts/._language-boilerplate.js
 scripts/._one-page-nav.js
+scripts/._pwacompat.js
 scripts/jQuery/._jquery.js
